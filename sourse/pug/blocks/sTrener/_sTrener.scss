@@ -5,6 +5,7 @@
 		color: #ffffff;
 		text-align: center;
 		--sPB: #{rem(8)};
+		background-color: $body-color;
 		
 		&__small{
 			font-size: rem(14);
