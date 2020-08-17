@@ -1,0 +1,62 @@
+
+	// start .sNow
+	.sNow {
+		text-align: center;
+	
+		h2{
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 320px;
+		}
+		&__item{
+			border-radius: 10px;
+			background-color: #253341;
+			position: relative;
+			overflow: hidden;
+			color: #ffffff;
+			// @extend .h2;
+			@include rfs($h2-font-size);
+			font-weight: normal;
+			margin-left: auto;
+			margin-right: auto;
+			// max-width: 345px;
+			margin-bottom: 45px;
+			picture{
+				height: 192px;
+				position: relative;
+				overflow: hidden;
+			}
+		}
+		&__title{
+			height: 102px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding: rem(10);
+			line-height: (25 / 20);
+		}
+		 
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {}
+
+} // end.sNow

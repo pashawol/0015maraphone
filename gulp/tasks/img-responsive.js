@@ -16,17 +16,11 @@ module.exports = function () {
 					// Produce @2x images
 					width: '100%', quality: 75, progressive: true, rename: { prefix: '@2x/', },
 				},
-				{
-					// Produce @1x images
-					width: '50%', quality: 75, progressive: true, rename: { prefix: '@1x/', }
-				},
+			 
 				{
 					width: '100%', quality: 90, progressive: true, rename: { prefix: '@2x/webp/', extname: '.webp', },
 				},
-				{
-					width: '50%', quality: 90, progressive: true, rename: { prefix: '@1x/webp/', extname: '.webp', },
-				},
-
+			 
 				]
 			})).on('error', function () { console.log('No matching images found') })
 			.pipe($.gp.rename(function (path) { path.extname = path.extname.replace('jpeg', 'jpg') }))

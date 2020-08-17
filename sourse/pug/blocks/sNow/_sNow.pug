@@ -1,0 +1,20 @@
+mixin sNow()
+	// start sNow
+	+b.SECTION.sNow.section#sNow&attributes(attributes)
+		.container
+			h2 Сейчас ты&nbsp;думаешь, 
+				br
+				| что худеть&nbsp;&mdash; это сложно. 
+				br
+				| Диеты, срывы, тренажерка, на&nbsp;которую нет времени и&nbsp;сил...
+				
+			mixin item(i, t)
+				+e.item
+					+pic(`sNow-img-${i}.jpg`)
+					+e.title!= t
+			+item('1',`Некогда ходить в&nbsp;зал. <br> Семья, дети, работа...`)
+			+item('2',`Уже 10&nbsp;лет пытаюсь похудеть,   <br> но&nbsp;не&nbsp;получается. <br> Нет силы воли.`)
+			+item('3',`Не&nbsp;понятно, как питаться. <br> Какую диету выбрать?  <br> Как не&nbsp;сорваться?`)
+			+item('4',`Никто не&nbsp;поддерживает <br> и&nbsp;предательски жует<br> пиццу или конфеты рядом.`)
+			+item('5',`Раздражает постоянный <br> подсчет калорий!`)
+	// end sNow

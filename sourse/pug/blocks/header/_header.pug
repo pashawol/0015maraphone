@@ -1,5 +1,17 @@
 mixin header()
 	// start header
 	+b.HEADER.header#header&attributes(attributes)
-		block
+		.container
+			img(src="img/@2x/head-img.png", alt="")
+			+e.label
+				+e.text Бесплатный онлайн-марафон 
+				| с 24 по 28 августа
+			h1 Худеем без стресса
+			p Хватит мечтать о&nbsp;красивой фигуре!
+				br
+				| Приходи на&nbsp;марафон от&nbsp;тренера   с&nbsp;10-летним опытом и&nbsp;узнай,  как похудеть без стресса, уделяя себе всего лишь 30&nbsp;минут в&nbsp;день.
+			a.btn(href="#") УЧАСТВОВАТЬ БЕСПЛАТНО
+			+e.small
+				img(src="img/telegram.svg", alt="")
+				| Марафон проходит в&nbsp;приложении Telegram. Это единственное, что тебе понадобится.
 	// end header

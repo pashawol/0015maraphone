@@ -1,0 +1,30 @@
+mixin sControl()
+	// start sControl
+	+b.SECTION.sControl.section#sControl&attributes(attributes)
+		.container
+			h2 Марафон проходит под контролем <br> профессионального тренера <br> с&nbsp;опытом 10&nbsp;лет
+			+e.name Никита Толмачев
+			+e.slider--js.swiper-container
+				.swiper-wrapper
+					+e.slide.swiper-slide
+						a(href="img/@2x/slide-1.jpg" data-fancybox="gal2"): img.swiper-lazy.res-i(src="#" data-src=`img/@2x/slide-1.jpg`, alt="")
+					+e.slide.swiper-slide
+						a(href="img/@2x/slide-2.jpg" data-fancybox="gal2"): img.swiper-lazy.res-i(src="#" data-src=`img/@2x/slide-2.jpg`, alt="")
+					+e.slide.swiper-slide
+						a(href="img/@2x/slide-1.jpg" data-fancybox="gal2"): img.swiper-lazy.res-i(src="#" data-src=`img/@2x/slide-1.jpg`, alt="") 
+				+e.control-wrap
+					+arrow
+				.swiper-pagination
+			ul
+				li Кандидат в&nbsp;мастера спорта <br> по&nbsp;бодибилдингу.
+
+				li 3-х кратный чемпион Магнитогорска <br> по&nbsp;бодибилдингу.
+
+				li 3-х кратный чемпионом Челябинской области по&nbsp;бодибилдингу.
+
+				li 3-х кратный призер Уральского Федерального округа по&nbsp;бодибилдингу.
+
+				li В&nbsp;2013 году занял 2&nbsp;место <br> в&nbsp;чемпионате России <br> по&nbsp;классическому бодибилдингу.
+
+				li Сертифицированный массажист, поэтому хорошо знаю анатомию тела.
+	// end sControl

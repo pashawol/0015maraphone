@@ -56,88 +56,7 @@ const JSCCommon = {
 		}
 		if (linkModal) addData();
 	},
-	// /modalCall
-	toggleMenu() {
-		if (this.btnToggleMenuMobile) {
-			this.btnToggleMenuMobile.forEach(element => {
-				element.addEventListener('click', () => {
-					this.btnToggleMenuMobile.forEach(element => element.classList.toggle("on"));
-					this.menuMobile.classList.toggle("active");
-					document.body.classList.toggle("fixed");
-					return false;
-				});
-			});
-		}
-	},
-
-	closeMenu() {
-		if (this.menuMobile) {
-			this.btnToggleMenuMobile.forEach(element => {
-				element.classList.remove("on");
-			});
-			this.menuMobile.classList.remove("active");
-			document.body.classList.remove("fixed");
-		}
-
-	},
-	mobileMenu() {
-		if (this.menuMobileLink) {
-			this.toggleMenu();
-			document.addEventListener('mouseup', (event) => {
-				let container = event.target.closest(".menu-mobile--js.active"); // (1)
-				if (!container) {
-					this.closeMenu();
-				}
-			}, { passive: true });
-
-			window.addEventListener('resize', () => {
-				if (window.matchMedia("(min-width: 992px)").matches) {
-					JSCCommon.closeMenu();
-				}
-			}, { passive: true });
-		}
-	},
-	// /mobileMenu
-
-	// табы  .
-	tabscostume(tab) {
-
-		let tabs = {
-			Btn: [].slice.call(document.querySelectorAll(`.${tab}__btn`)),
-			BtnParent: [].slice.call(document.querySelectorAll(`.${tab}__caption`)),
-			Content: [].slice.call(document.querySelectorAll(`.${tab}__content`)),
-		}
-		tabs.Btn.forEach((element, index) => {
-			element.addEventListener('click', () => {
-				if (!element.classList.contains('active')) {
-					let siblings = element.parentNode.querySelector(`.${tab}__btn.active`);
-					let siblingsContent = tabs.Content[index].parentNode.querySelector(`.${tab}__content.active`);
-					siblings.classList.remove('active');
-					siblingsContent.classList.remove('active')
-					element.classList.add('active');
-					tabs.Content[index].classList.add('active');
-				} 
-			})
-		})
-		// $('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
-		// 	$(this)
-		// 		.addClass('active').siblings().removeClass('active')
-		// 		.closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active')
-		// 		.eq($(this).index()).fadeIn().addClass('active');
-
-		// });
-
-	},
-	// /табы
-
-	inputMask() {
-		// mask for input
-		let InputTel = [].slice.call(document.querySelectorAll('input[type="tel"]'));
-		InputTel.forEach(function (element) {
-			element.setAttribute("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}")
-		});
-		Inputmask("+9(999)999-99-99").mask(InputTel);
-	},
+ 
 	// /inputMask
 	ifie() {
 		var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
@@ -190,76 +109,23 @@ const JSCCommon = {
 
 		});
 	},
-	heightwindow() {
-		// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-		let vh = window.innerHeight * 0.01;
-		// Then we set the value in the --vh custom property to the root of the document
-		document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-		// We listen to the resize event
-		window.addEventListener('resize', () => {
-			// We execute the same script as before
-			let vh = window.innerHeight * 0.01;
-			document.documentElement.style.setProperty('--vh', `${vh}px`);
-		}, { passive: true });
-	},
-	animateScroll() {
-		// листалка по стр
-		$(" .top-nav li a, .scroll-link").click(function () {
-			const elementClick = $(this).attr("href");
-			const destination = $(elementClick).offset().top;
-
-			$('html, body').animate({ scrollTop: destination }, 1100);
-
-			return false;
-		});
-	}
+ 
 };
 const $ = jQuery;
 
 function eventHandler() {
-	JSCCommon.modalCall();
-	JSCCommon.tabscostume('tabs');
-	JSCCommon.mobileMenu();
-	JSCCommon.inputMask();
+	JSCCommon.modalCall(); 
 	JSCCommon.ifie();
-	JSCCommon.sendForm();
-	JSCCommon.heightwindow();
-	JSCCommon.animateScroll();
-
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
+	var x = window.location.host;
 	let screenName;
 	screenName = 'main.jpg';
-	screenName
-		? $(".main-wrapper").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`)
-		: '';
-	// /добавляет подложку для pixel perfect
-
-
-	function whenResize() {
-
-		const topH = document.querySelector('header').scrollHeight;
-		let stickyElement = document.querySelector('.top-nav')
-		window.onscroll = () => {
-			if ($(window).scrollTop() > topH) {
-
-				stickyElement.classList.add('fixed');
-			} else {
-				stickyElement.classList.remove('fixed');
-			}
-		};
-
+	if (screenName && x === "localhost:3000") {
+		$(".main-wrapper").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
-
-	window.addEventListener('resize', () => {
-		whenResize();
-
-	}, { passive: true });
-
-	whenResize();
-
-
+	// /добавляет подложку для pixel perfect
+ 
 	let defaultSl = {
 		spaceBetween: 0,
 		lazy: {
@@ -282,15 +148,10 @@ function eventHandler() {
 		},
 	}
 
-	const swiper4 = new Swiper('.sBanners__slider--js', {
+	const swiper4 = new Swiper('.sControl__slider--js', {
 		// slidesPerView: 5,
 		...defaultSl,
-		slidesPerView: 'auto',
-		freeMode: true,
-		loopFillGroupWithBlank: true,
-		touchRatio: 0.2,
-		slideToClickedSlide: true,
-		freeModeMomentum: true,
+		slidesPerView: 1,
 
 	});
 	// modal window
