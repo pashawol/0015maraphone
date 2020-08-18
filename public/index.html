@@ -20,14 +20,18 @@
 		<!-- Custom Browsers Color-->
 		<meta name="theme-color" content="#3361d8">
 		<link rel="stylesheet" href="libs/swiper/css/swiper.min.css"/>
-		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
 	<body><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
 		<div class="main-wrapper">
 			<!-- start header-->
 			<header class="header" id="header">
-				<div class="container"><img src="img/@2x/head-img.png" alt=""/>
+				<div class="container">
+					<!-- picture-->
+					<picture class="lazy"> 
+						<source srcset="#" data-srcset="img/@2x/webp/head-img.webp" type="image/webp"/><img src="#" data-src="img/@2x/head-img.png" alt=""/>
+					</picture>
+					<!-- /picture-->
 					<div class="header__label">
 						<div class="header__text">Бесплатный онлайн-марафон 
 						</div>с 24 по 28 августа
@@ -246,6 +250,7 @@
 		</div>
 		<!-- #modal-call-->
 		<!-- end modals-->
+		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
 		<script src="js/lazy.js"></script>
 		<script src="libs/jquery/jquery.min.js"></script>
 		<!-- modal libs-->
@@ -254,7 +259,6 @@
 		<!-- slider libs-->
 		<script src="libs/swiper/js/swiper.min.js"></script>
 		<!-- /slider libs-->
-		<script src="libs/inputmask/inputmask.min.js"></script>
 		<script src="js/common.js"></script>
 	</body>
 </html>

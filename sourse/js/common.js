@@ -118,12 +118,12 @@ function eventHandler() {
 	JSCCommon.ifie();
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	var x = window.location.host;
-	let screenName;
-	screenName = 'main.jpg';
-	if (screenName && x === "localhost:3000") {
-		$(".main-wrapper").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
-	}
+	// var x = window.location.host;
+	// let screenName;
+	// screenName = 'main.jpg';
+	// if (screenName && x === "localhost:3000") {
+	// 	$(".main-wrapper").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
+	// }
 	// /добавляет подложку для pixel perfect
  
 	let defaultSl = {
