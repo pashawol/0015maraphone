@@ -3,7 +3,7 @@
 	.sHow {
 		background-image: url(../img/@2x/sHow-bg.jpg);
 		--sPB: 28px;
-		background-color: $body-color;
+		background-color: $body-color;gulp
 		h2{
 			text-align: center;
 			@include rfs($h1-font-size);
